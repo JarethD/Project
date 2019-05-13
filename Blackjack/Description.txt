@@ -1,2 +1,15 @@
 BlackJack made in c++
-
+	Ask if player is returning or not / Login or Create Account
+	NAME IS CASE SENSITIVE
+	if not
+		Player starts out with 500 Chips
+		Player must enter Name(first), and Age
+		Ask player to insert pin for future logins
+		Player Name gets Saved in a binary file with chip amount
+		Player then plays game
+	if player is returning, ask player to enter name and pin
+		Check if user is in Database
+		if yes ask for pin
+			check pin
+		is no ask player if they spelled name Correctly
+		if player cannot login, Offer option to enter "Back" or 'B'/'b' to go back and create a login
