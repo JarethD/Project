@@ -2,12 +2,18 @@
 	Author: Jareth Dodson
 	Date Created: 5-13-19
 */
-#include "Deck.h"
+
 #include <iostream>
+#include <conio.h>
+#include <Windows.h>
+#include <iomanip>
+#include "Deck.h"
 
 using std::cout;
 using std::endl;
 using std::cin;
+using std::setw;
+
 
 class Board
 {

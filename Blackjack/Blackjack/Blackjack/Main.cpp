@@ -8,16 +8,23 @@
 */
 
 #include <iostream>
-#include "Deck.h"
+//#include "Blackjack.h"
+#include "Player.h"
+
 using std::cout;
 using std::endl;
 
 int main()
 {
 	cout << "Welcome To BlackJack" << endl;
-	Deck d1;
-	d1.Shuffle();
-	for(int i = 0; i < 52; ++i)
-		cout << d1.DealCard().getRank() << endl;
+	/*Blackjack game;
+	game.PlayGame();*/
+	//Board b1;
+	//b1.DisplayBoard();
+	Player p1;
+	p1.RevieceHand(Card(SUIT(1), RANK(2)), Card(SUIT(2), RANK(8)));
+	//cout << p1.m_handTotal << endl;
+	p1.PlayerHit(Card(SUIT(4), RANK(1)));
+	cout << p1.getHandSize() << " " << p1.getHandTotal() << " ";
 	return 0;
 }

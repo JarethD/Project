@@ -20,5 +20,5 @@ class Deck
 
 	private:
 		Card m_deck[52];
-		int currentCard;
+		int m_currentCard;
 };
