@@ -26,5 +26,5 @@ int main()
 	//cout << p1.m_handTotal << endl;
 	p1.PlayerHit(Card(SUIT(4), RANK(1)));
 	cout << p1.getHandSize() << " " << p1.getHandTotal() << " ";
-	return 0;
+	//return 0;
 }

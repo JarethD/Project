@@ -11,6 +11,9 @@ Player::Player(char playType) : m_hand(nullptr), m_playType(playType), m_handTot
 Player::Player(const Player& copy) : m_hand(nullptr), m_handTotal(copy.m_handTotal), 
 	m_playType(copy.m_playType), m_handSize(copy.m_handSize)
 {
+	/*m_hand = new Card[copy.m_handSize];
+	for (int i = 0; i < copy.m_handSize; ++i)
+		m_hand[i] = copy.m_hand[i];*/
 	m_hand = copy.m_hand;
 }
 
@@ -18,7 +21,7 @@ Player& Player::operator=(const Player& rhs)
 {
 	if (this != &rhs)
 	{
-		//ClearHand();
+		ClearHand();
 		for (int i = 0; i < rhs.m_handSize; ++i)
 			m_hand[i] = rhs.m_hand[i];
 		m_handSize = rhs.m_handSize;
@@ -30,11 +33,7 @@ Player& Player::operator=(const Player& rhs)
 
 Player::~Player()
 {
-	/*if (m_hand != nullptr)
-	{
-		delete[] m_hand;
-		m_hand = nullptr;
-	}*/
+	ClearHand();
 }
 
 void Player::PlayerHit(Card card)
@@ -43,16 +42,9 @@ void Player::PlayerHit(Card card)
 	Card* temp = new Card[m_handSize + 1];
 	for (int i = 0; i < m_handSize; ++i)
 		temp[i] = m_hand[i];
-	//ClearHand(); //Purge();
-	/*
-	if (m_hand != nullptr)
-	{
-		delete[] m_hand;
-		m_hand = nullptr;
-	}
-*/
+	ClearHand(); //Purge();
 
-	temp[m_handSize + 1] = card;
+	temp[m_handSize] = card;
 	m_hand = temp;
 	//Update Total
 	m_handTotal = m_handTotal + temp[m_handSize].getRank();
